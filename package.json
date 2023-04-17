@@ -1,0 +1,24 @@
+{
+  "name": "@artsofte/esw",
+  "version": "0.0.0",
+  "description": "Esw types",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc --project tsconfig.json",
+    "npm:publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abanking/esw.git"
+  },
+  "keywords": [],
+  "author": "Ermolaev Ilya <iermolaev@abanking.kz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abanking/esw/issues"
+  },
+  "homepage": "https://github.com/Abanking/esw#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
