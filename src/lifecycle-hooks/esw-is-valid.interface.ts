@@ -1,3 +1,3 @@
 export interface EswIsValid {
-    eswIsValid: () => boolean;
+  eswIsValid: () => boolean;
 }

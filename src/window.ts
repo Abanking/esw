@@ -4,6 +4,6 @@ import { GetSettingsReturn } from './settings-api';
 
 declare global {
     function getEswNamespace(doc?: Document): IEswNamespace;
-    function init<WConfig>(env: EswEnv, config: WConfig): IEswInstance
+    function init(env: EswEnv, config: any): IEswInstance
     function initSettings(): GetSettingsReturn
 }

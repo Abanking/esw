@@ -1,3 +1,3 @@
 export interface EswAfterMount {
-    eswAfterMount: (root: HTMLElement) => void;
+  eswAfterMount: (root: HTMLElement) => void;
 }

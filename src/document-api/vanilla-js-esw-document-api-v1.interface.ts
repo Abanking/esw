@@ -6,7 +6,9 @@ export interface IVanillaJsEswDocumentApiV1 {
 
     patchDocumentContent: (jsonData: DocumentJsonData) => Promise<boolean>;
 
+    patchDocumentContentByPath: (path: string, jsonData: DocumentJsonData) => Promise<boolean>;
+
     uploadFile: (file: File) => Promise<UUID>;
 
-    documentDataByPath: <T>(documentId: UUID, path: string) => Promise<T>;
+    // documentDataByPath: <T>(documentId: UUID, path: string) => Promise<T>;
 }

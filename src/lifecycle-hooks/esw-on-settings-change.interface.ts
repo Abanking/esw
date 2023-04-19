@@ -1,3 +1,3 @@
 export interface EswOnSettingsChange {
-    eswOnSettingsChange: <T>(config: T) => void;
+  eswOnSettingsChange: (config: any) => void;
 }

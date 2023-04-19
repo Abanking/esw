@@ -1,3 +1,3 @@
 export interface EswAfterUnmount {
-    eswAfterUnmount: () => void;
+  eswAfterUnmount: () => void;
 }
