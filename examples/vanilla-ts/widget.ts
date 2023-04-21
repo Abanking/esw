@@ -1,12 +1,19 @@
-import { CatalogSettingsValue, EswAfterMount, EswEnv, GetSettingsReturn, IEswApi } from "@ermolaev/esw";
+import {
+  CatalogSettingsValue,
+  EswAfterMount,
+  EswEnv,
+  GetSettingsReturn,
+  IEswApi,
+  EswOnSettingsChange,
+} from "@ermolaev/esw";
 
-interface WidgetConfig {
-  catalogData: CatalogSettingsValue;
-}
+type WidgetSettings = {
+  weatherConnector: CatalogSettingsValue;
+};
 
-window.init = (env: EswEnv, config: any) => {
-  return new Widget(env, config);
-}
+window.init = (env: EswEnv, config: WidgetSettings) => {
+  return new SimpleWidget(config);
+};
 
 window.initSettings = (): GetSettingsReturn => {
   return {
@@ -14,54 +21,39 @@ window.initSettings = (): GetSettingsReturn => {
     settings: [
       {
         type: "catalog",
-        label: "Каталог, который нужно отобразить",
-        saveTo: "catalogData",
+        label: "Каталоги",
+        saveTo: "weatherConnector",
       },
     ],
   };
-}
+};
 
-class Widget implements EswAfterMount {
+class SimpleWidget implements EswAfterMount, EswOnSettingsChange {
   private readonly api: IEswApi = getEswNamespace().api;
 
-  private root!: HTMLElement;
+  private root: HTMLElement | null = null;
 
-  constructor(
-    private readonly env: EswEnv,
-    private readonly config: WidgetConfig,
-  ) {
-  }
+  constructor(private config: WidgetSettings) {}
 
   public eswAfterMount(root: HTMLElement): void {
     this.root = root;
+    root.innerHTML = "Hello, world!";
+    this.updateView();
+    this.api.v1.documentApi.
+  }
 
-    if (this.env.isProvider) {
-      this.renderProviderView();
-      return;
+  public updateView() {
+    const root: HTMLElement | null = this.root;
+    if (root && this.config.weatherConnector) {
+      this.api.v1.catalogApi
+        ?.read(this.config.weatherConnector)
+        .then((data) => (root.innerHTML = JSON.stringify(data)))
+        .catch(() => (root.innerHTML = "Извините, произошла ошибка"));
     }
-
-    if (this.api.v1.catalogApi) {
-      this.api.v1.catalogApi.read<{ name: string, value: string }[]>(this.config.catalogData)
-        .then((data: { name: string, value: string }[]) => this.renderCatalog(data))
-        .catch(() => this.renderError())
-    }
   }
 
-  private renderProviderView() {
-    this.root.innerHTML = '<div>Виджет показывает содержимое каталога</div>'
-  }
-
-  private renderCatalog(data: { name: string, value: string }[]) {
-    let resultHtml = '';
-
-    data.forEach((obj) => {
-      resultHtml += `<div>${obj.name} = ${obj.value}</div>`
-    })
-
-    this.root.innerHTML = resultHtml;
-  }
-
-  private renderError() {
-    this.root.innerHTML = 'Ошибка при загрузке справочника';
+  public eswOnSettingsChange(config: WidgetSettings) {
+    this.config = config;
+    this.updateView();
   }
 }

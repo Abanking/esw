@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ermolaev/esw": "^0.0.5"
+    "@ermolaev/esw": "^0.0.9"
   },
   "devDependencies": {
     "typescript": "^5.0.4"
