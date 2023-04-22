@@ -1,5 +1,5 @@
-import { CatalogAssociationSettingsAndValue } from '../settings-api';
+import { ProviderCatalogSetting } from '../settings-api';
 
 export interface IVanillaJsEswCatalogApiV1 {
-    read: <CatalogData>(catalog: CatalogAssociationSettingsAndValue['value']) => Promise<CatalogData>;
+    content: <CatalogData>(catalog: ProviderCatalogSetting) => Promise<CatalogData>;
 }

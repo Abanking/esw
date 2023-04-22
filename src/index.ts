@@ -1,7 +1,6 @@
 export * from './common';
 export * from './document-api';
 export * from './types';
-export * from './connector-api';
 export * from './settings-api';
 export * from './catalog-api';
 export * from './lifecycle-hooks';
