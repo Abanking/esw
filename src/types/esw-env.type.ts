@@ -1,10 +1,14 @@
-export type EswFormEnv = {
+import { RenderingPlatform } from './rendering-platform.type';
+
+export type EswProviderEnv = {
+    isProvider: true;
+}
+
+export type EswClientEnv = {
+    isProvider: false;
     documentId: string;
+    isAuth: boolean;
+    platform: RenderingPlatform;
 }
 
-export type EswCommonEnv = {
-    // маркетплейc
-    isProvider: boolean;
-}
-
-export type EswEnv = EswCommonEnv & Partial<EswFormEnv>;
+export type EswEnv = EswClientEnv | EswProviderEnv;

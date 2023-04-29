@@ -6,5 +6,6 @@ export type ChildWindow = Window & {
     init: InitWidget,
     initSettings?: InitSettings,
     getEswNamespace: (doc?: Document) => IEswNamespace,
+    getRenderRoot: () => HTMLElement;
     renderElementRef: HTMLDivElement,
 }
