@@ -1,4 +1,4 @@
 node_modules
 dist
-
+.idea
 examples/vanilla-ts/node_modules
