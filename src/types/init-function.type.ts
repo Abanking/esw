@@ -1,3 +1,3 @@
-import { IEswInstance } from '../common';
+import { EswInstance } from '../common';
 
-export type InitWidget = (config: unknown) => IEswInstance;
+export type InitWidget = (config: unknown) => EswInstance;

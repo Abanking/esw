@@ -8,6 +8,6 @@ export type Settings = DeclaredCatalogSettings | DeclaredDocumentElementWriteSet
 
 export type ProviderSettings = ProviderCatalogSetting | ProviderDocumentElementWriteSettings;
 
-export type GetSettingsReturn = { version: 'v1', settings: Settings[] };
+export type EswSettingsDeclaration = { version: 'v1', settings: Settings[] };
 
-export const eswEmptySettings: GetSettingsReturn = { version: 'v1', settings: [] };
+export const eswEmptySettings: EswSettingsDeclaration = { version: 'v1', settings: [] };

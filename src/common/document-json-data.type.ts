@@ -1,1 +1,1 @@
-export type DocumentJsonData = Record<string, unknown>;
+export type DocumentJsonData = Record<any, unknown>;

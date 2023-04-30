@@ -6,7 +6,6 @@ export interface IVanillaJsEswDocumentApiV1 {
      * Если же права на чтение у виджета нет - вернется ошибка
      *
      * @return {DocumentJsonData} объект с данными, сформированные относительно того пути, который разрешил провайдер
-     * @throws {ReadDocumentAccessError} провайдер не позволил читать данные из модели документа
      */
     documentContent: <T>(path?: string) => Promise<T | null>;
 

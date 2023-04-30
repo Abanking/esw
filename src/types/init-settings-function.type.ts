@@ -1,3 +1,3 @@
-import { GetSettingsReturn } from '../settings-api';
+import { EswSettingsDeclaration } from '../settings-api';
 
-export type InitSettings = () => GetSettingsReturn;
+export type InitSettings = () => EswSettingsDeclaration;

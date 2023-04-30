@@ -1,1 +1,2 @@
-export * from './read-document-access.error';
+export * from './calling-in-wrong-env.error';
+export * from './internal.error';

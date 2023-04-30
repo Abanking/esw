@@ -1,5 +1,4 @@
-import { EswAfterUnmount, EswIsValid } from '../lifecycle-hooks';
-import { EswOnSettingsChange } from '../lifecycle-hooks/esw-on-settings-change.interface';
+import { EswAfterUnmount, EswIsValid, EswOnSettingsChange } from '../lifecycle-hooks';
 
-export interface IEswInstance extends Partial<EswAfterUnmount>, Partial<EswIsValid>, Partial<EswOnSettingsChange> {
-}
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export interface EswInstance extends Partial<EswAfterUnmount>, Partial<EswIsValid>, Partial<EswOnSettingsChange> {}
