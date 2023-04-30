@@ -3,6 +3,7 @@ import {
   EswApi,
   EswIsValid,
   EswOnSettingsChange,
+  EswSettingsDeclaration,
 } from "@ermolaev/esw";
 
 window.eswInit = (config: any) => {
@@ -30,8 +31,9 @@ class SimpleWidget implements EswAfterUnmount, EswOnSettingsChange, EswIsValid {
     console.log("Echo::eswAfterUnmount");
   }
 
-  public eswOnSettingsChange(): void {
+  public eswOnSettingsChange(config: any): void {
     console.log("Echo::eswOnSettingsChange");
+    console.log(config);
   }
 
   public eswIsValid(): boolean {
