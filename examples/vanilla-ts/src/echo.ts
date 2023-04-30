@@ -5,7 +5,7 @@ import {
   EswOnSettingsChange,
 } from "@ermolaev/esw";
 
-window.init = (config: any) => {
+window.eswInit = (config: any) => {
   console.log("Echo::init");
   console.log("Echo::init-config " + JSON.stringify(config ?? {}));
   return new SimpleWidget();

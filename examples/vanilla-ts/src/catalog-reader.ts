@@ -1,14 +1,14 @@
-import { Catalog, GetSettingsReturn } from "@ermolaev/esw";
+import { Catalog, EswSettingsDeclaration } from "@ermolaev/esw";
 
 interface IWidgetSettings {
   catalog: Catalog<{ name: string; value: string }[]>;
 }
 
-window.init = (config: IWidgetSettings) => {
+window.eswInit = (config: IWidgetSettings) => {
   return new CatalogReader(config);
 };
 
-window.initSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): EswSettingsDeclaration => {
   return {
     version: "v1",
     settings: [

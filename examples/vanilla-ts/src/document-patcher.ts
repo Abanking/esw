@@ -1,10 +1,10 @@
 import {
   DocumentElement,
   EswAfterUnmount,
-  GetSettingsReturn,
+  EswSettingsDeclaration,
 } from "@ermolaev/esw";
 
-window.init = (config: IWidgetSettings) => {
+window.eswInit = (config: IWidgetSettings) => {
   return new SimpleWidget(config);
 };
 
@@ -12,7 +12,7 @@ interface IWidgetSettings {
   documentToken: DocumentElement<{ someData: string }>;
 }
 
-window.initSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): EswSettingsDeclaration => {
   return {
     version: "v1",
     settings: [
