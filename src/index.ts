@@ -5,3 +5,6 @@ export * from './settings-api';
 export * from './catalog-api';
 export * from './lifecycle-hooks';
 export * from './window';
+export * from './constans';
+export * from './errors';
+export * from './utils';

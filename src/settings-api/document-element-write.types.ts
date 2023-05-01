@@ -4,7 +4,7 @@ import { DocumentElement } from '../document-api';
 export type DocumentElementWriteSettingsType = 'documentElementWrite';
 
 export type DeclaredDocumentElementWriteSettings = {
-    type: DocumentElementWriteSettingsType,
+    type: DocumentElementWriteSettingsType;
     label: string;
     saveTo: string;
     isRequired?: boolean;
