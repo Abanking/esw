@@ -1,4 +1,4 @@
-import { ReadonlyDocumentElement } from "@ermolaev/esw";
+import { ReadonlyDocumentElement } from "@artsofte/esw";
 
 interface IWidgetSettings {
   rootElement: ReadonlyDocumentElement<{}>;

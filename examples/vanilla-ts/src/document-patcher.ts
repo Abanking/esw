@@ -2,7 +2,7 @@ import {
   DocumentElement,
   EswAfterUnmount,
   EswSettingsDeclaration,
-} from "@ermolaev/esw";
+} from "@artsofte/esw";
 
 window.eswInit = (config: IWidgetSettings) => {
   return new SimpleWidget(config);

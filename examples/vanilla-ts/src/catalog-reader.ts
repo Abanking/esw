@@ -1,4 +1,4 @@
-import { Catalog, EswSettingsDeclaration } from "@ermolaev/esw";
+import { Catalog, EswSettingsDeclaration } from "@artsofte/esw";
 
 interface IWidgetSettings {
   catalog: Catalog<{ name: string; value: string }[]>;
