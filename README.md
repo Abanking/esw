@@ -15,7 +15,7 @@
 ## Простейший виджет <a name="simplew"></a>
 Сначала вам нужно реализовать сам виджет. Виджет - это js файл. Так выглядит самый простой виджет, который выводит на экран текст "Hello, world"
 ``` ts
-window.init = () => {
+window.eswInit = () => {
   return new SimpleWidget();
 };
 
@@ -44,7 +44,7 @@ npm i @artsofte/esw
 ``` ts
 import { EswIsValid } from "@artsofte/esw";
 
-window.init = () => {
+window.eswInit = () => {
   return new SimpleWidget();
 };
 
@@ -61,7 +61,7 @@ class SimpleWidget implements EswIsValid {
 ``` ts
 import { EswAfterUnmount } from "@artsofte/esw";
 
-window.init = () => {
+window.eswInit = () => {
   return new SimpleWidget();
 };
 
@@ -91,11 +91,11 @@ interface IWidgetSettings {
   catalog: Catalog<{ name: string; value: string }[]>;
 }
 
-window.init = (config: IWidgetSettings) => {
+window.eswInit = (config: IWidgetSettings) => {
   return new CatalogReader(config);
 };
 
-window.initSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): GetSettingsReturn => {
   return {
     version: "v1",
     settings: [
@@ -141,7 +141,7 @@ import {
   GetSettingsReturn,
 } from "@ermolaev/esw";
 
-window.init = (config: IWidgetSettings) => {
+window.eswInit = (config: IWidgetSettings) => {
   return new SimpleWidget(config);
 };
 
@@ -149,7 +149,7 @@ interface IWidgetSettings {
   documentToken: DocumentElement<{ someData: string }>;
 }
 
-window.initSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): GetSettingsReturn => {
   return {
     version: "v1",
     settings: [
@@ -204,11 +204,11 @@ interface IWidgetSettings {
   catalog: Catalog<{ name: string; value: string }[]>;
 }
 
-window.init = (config: IWidgetSettings) => {
+window.eswInit = (config: IWidgetSettings) => {
   return new CatalogReader(config);
 };
 
-window.initSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): GetSettingsReturn => {
   return {
     version: "v1",
     settings: [
