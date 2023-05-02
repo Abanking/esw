@@ -1,19 +1,18 @@
 {
-  "name": "vanilla-ts-esw-example",
+  "name": "vanilla-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "private": true,
   "scripts": {
     "build": "npx tsc --project tsconfig.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@ermolaev/esw": "^0.0.9"
-  },
   "devDependencies": {
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@ermolaev/esw": "^0.0.14"
   }
 }
