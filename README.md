@@ -131,6 +131,29 @@ class CatalogReader implements EswOnSettingsChange {
 ## Вывод настроек для провайдера <a name="provider"></a>
 Платформа имеет встроенные механизмы справочников, модели документа и другие. Виджету требуется взаимодействие с ними. Всегда доступ к тем или иным сущностям выдает провайдер в правом сайд-баре. 
 Например, виджет хочет записывать данные в модель документа. Тогда провайдер в правом сайде-баре выбирает область в модели документа, куда виджет имеет право писать данные. Другой пример, виджет хочет получить доступ до каталога: провайдер выбирает к какому каталогу именно виджет имеет доступ.
+Чтобы указать, какие настройки требуются - реализуйте глобальную функцию `eswInitSettings`. У каждой настройки есть параметр saveTo, этот параметр обозначает путь, куда в конфиге буду сохранены данные.
+``` ts
+window.eswInitSettings = (): EswSettingsDeclaration => {
+    return {
+        version: "v1",
+        settings: [
+            {
+                ...,
+                saveTo: "param"
+            }
+        ]
+    }
+}
+
+interface WidgetSettings {
+    param: ... 
+}
+
+window.eswInit = (config: WidgetSettings) => {
+    ...
+}
+```
+Важно понимать, что при рендеринге на стороне провайдера config в метод eswInit будет пустым, так как провайдер еще не выбрал настройки.
 
 ### Запись в модель документа
 Виджет может записывать данные в модель документа. Для этого виджет должен вернуть требуемые настройки в методе `initSettings`
@@ -149,7 +172,7 @@ interface IWidgetSettings {
   documentToken: DocumentElement<{ someData: string }>;
 }
 
-window.eswInitSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): EswSettingsDeclaration => {
   return {
     version: "v1",
     settings: [
@@ -208,7 +231,7 @@ window.eswInit = (config: IWidgetSettings) => {
   return new CatalogReader(config);
 };
 
-window.eswInitSettings = (): GetSettingsReturn => {
+window.eswInitSettings = (): EswSettingsDeclaration => {
   return {
     version: "v1",
     settings: [
