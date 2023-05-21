@@ -8,12 +8,13 @@ import {
     DocumentRootReadSettingsType,
     ProviderDocumentRootReadSettings
 } from './document-root-read';
+import { DeclaredSelectSettings, ProviderSelectSettings, SelectSettingsType } from './select.types';
 
-export type Settings = DeclaredCatalogSettings | DeclaredDocumentElementWriteSettings | DeclaredDocumentRootReadSettings;
+export type Settings = DeclaredCatalogSettings | DeclaredDocumentElementWriteSettings | DeclaredDocumentRootReadSettings | DeclaredSelectSettings<any>;
 
-export type SettingsTypes = CatalogSettingsType | DocumentElementWriteSettingsType | DocumentRootReadSettingsType;
+export type SettingsTypes = CatalogSettingsType | DocumentElementWriteSettingsType | DocumentRootReadSettingsType | SelectSettingsType;
 
-export type ProviderSettings = ProviderCatalogSetting | ProviderDocumentElementWriteSettings | ProviderDocumentRootReadSettings;
+export type ProviderSettings = ProviderCatalogSetting | ProviderDocumentElementWriteSettings | ProviderDocumentRootReadSettings | ProviderSelectSettings<any>;
 
 export type EswSettingsDeclaration = { version: 'v1', settings: Settings[] };
 

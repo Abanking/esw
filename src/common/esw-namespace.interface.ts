@@ -18,4 +18,8 @@ export interface EswNamespace {
      * Ссылка на HTML элемент в котором происходит рендеринг виджета
      */
     renderRoot: HTMLElement;
+    /**
+     * Получение конфига
+     */
+    config: <T>() => T;
 }

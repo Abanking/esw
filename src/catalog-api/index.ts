@@ -1,2 +1,2 @@
-export * from './vanilla-js-esw-catalog-api-v1.interface';
+export * from './esw-catalog-api-bridge.interface';
 export * from './catalog.interface';

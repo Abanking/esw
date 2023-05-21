@@ -1,15 +1,15 @@
-import { IVanillaJsEswCatalogApiV1 } from '../catalog-api';
+import { IEswCatalogApiBridge } from '../catalog-api';
 
 export type EswApiOnForm = {
     v1: {
         // documentApi: IVanillaJsEswDocumentApiV1,
-        catalogApi: IVanillaJsEswCatalogApiV1,
+        catalogApi: IEswCatalogApiBridge,
     }
 }
 
 export type EswApiWithoutForm  = {
     v1: {
-        catalogApi: IVanillaJsEswCatalogApiV1,
+        catalogApi: IEswCatalogApiBridge,
     }
 }
 

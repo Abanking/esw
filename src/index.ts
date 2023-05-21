@@ -1,5 +1,5 @@
 export * from './common';
-export * from './document-api';
+export * from './document-element-api';
 export * from './types';
 export * from './settings-api';
 export * from './catalog-api';

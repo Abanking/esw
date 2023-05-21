@@ -1,5 +1,5 @@
-import { ReadonlyDocumentElement } from '../document-api';
 import { Settings } from './main';
+import { ReadonlyDocumentElement } from '../document-element-api';
 
 export type DocumentRootReadSettingsType = 'documentRootRead';
 

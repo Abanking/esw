@@ -1,5 +1,5 @@
 import { Settings } from './main';
-import { DocumentElement } from '../document-api';
+import { DocumentElement } from '../document-element-api';
 
 export type DocumentElementWriteSettingsType = 'documentElementWrite';
 
