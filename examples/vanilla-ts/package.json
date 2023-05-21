@@ -13,6 +13,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@artsofte/esw": "^0.0.2"
+    "@artsofte/esw": "^0.0.3"
   }
 }

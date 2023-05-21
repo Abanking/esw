@@ -88,7 +88,7 @@ class SimpleWidget implements EswAfterUnmount {
 import { Catalog, EswOnSettingsChange, GetSettingsReturn } from "@artsofte/esw";
 
 interface IWidgetSettings {
-  catalog: Catalog<{ name: string; value: string }[]>;
+  catalog: Catalog<{ name: string; value: string }>;
 }
 
 window.eswInit = (config: IWidgetSettings) => {
@@ -224,7 +224,7 @@ class SimpleWidget implements EswAfterUnmount {
 import { Catalog, GetSettingsReturn } from "@artsfote/esw";
 
 interface IWidgetSettings {
-  catalog: Catalog<{ name: string; value: string }[]>;
+  catalog: Catalog<{ name: string; value: string }>;
 }
 
 window.eswInit = (config: IWidgetSettings) => {
