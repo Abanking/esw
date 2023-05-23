@@ -277,6 +277,14 @@ class CatalogReader {
 - `documentRootRead` чтение всей модели документа. В `saveTo` будет записан `ReadonlyDocumentElement<T>`
 - `select` отображение селекта. В `saveTo` будет записан `SelectItem`
 
+## Обработка ошибок
+Если метод может выбросить ошибку - это отображено в его JSDoc.
+<img width="617" alt="image" src="https://github.com/Abanking/esw/assets/57585370/c1624b93-17b0-487f-9dd6-2d2866de68d3">
+У каждой ошибки есть `.errorCode`
+| Код ошибки       | Название   |
+| ------------- |:------------------:|
+| 101     | CallingInWrongEnvError |
+
 # Процесс проверки виджета
 ## Требования к исходному коду виджета
 - Разрешены поясняющие комментарии в виджете
