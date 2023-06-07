@@ -1,12 +1,18 @@
 # ESW Docs
 - [Общее](#common)
 - [Реализация виджета](#impl)
-- [Простейший виджет](#simplew)
-- [Использование TS](#ts)
-- [Исходный код и примеры](#sourcecode)
-- [Хуки жизненного цикла](#lch)
-- [Вывод настроек для провайдера](#provider)
-- [Использование бибилотек и фреймворков](#frameworks)
+  - [Простейший виджет](#simplew)
+  - [Использование TS](#ts)
+  - [Исходный код и примеры](#sourcecode)
+  - [Хуки жизненного цикла](#lch)
+    - [IsValid](#eswIsValid)
+    - [AfterUnmount](#eswAfterUnmount)
+    - [OnSettingsChange](#eswOnSettingsChange)
+  - [Вывод настроек для провайдера](#provider)
+    - [Запись в модель документа](#docWrite)
+    - [Справочники](#catalogs)
+    - [Другие настройки](#other)
+  - [Использование бибилотек и фреймворков](#frameworks)
 
 
 # Общее <a name="common"></a>
@@ -40,7 +46,7 @@ npm i @artsofte/esw
 С кодом библиотеки `@artsofte/esw` можно ознакомиться на [Github](https://github.com/Abanking/esw). Также можете ознакомиться с примерами виджетов [Examples](https://github.com/Abanking/esw/tree/main/examples/)
 
 ## Хуки жизненного цикла виджета <a name="lch"></a>
-### EswIsValid
+### EswIsValid <a name="eswIsValid"></a>
 Пример использования:
 ``` ts
 import { EswIsValid } from "@artsofte/esw";
@@ -57,7 +63,7 @@ class SimpleWidget implements EswIsValid {
 ```
 При попытке клиента перехода на следующий шаг - виджеты на форме должны быть валидными. Если виджет не валиден, то система не позволяет пройти на следующий шаг. Если ваш виджет реализует интерфейс `EswIsValid`, то при попытке перехода на следующий шаг будет вызван метод `eswIsValid`.
 
-### EswAfterUnmount
+### EswAfterUnmount <a name="eswAfterUnmount"></a>
 Пример использования:
 ``` ts
 import { EswAfterUnmount } from "@artsofte/esw";
@@ -83,7 +89,7 @@ class SimpleWidget implements EswAfterUnmount {
 ```
 Хук, обозначающий, что разметка вашего виджета уже удалена из DOM. Чаще всего используется для очистки таймеров, подписок.
 
-### EswOnSettingsChange
+### EswOnSettingsChange <a name="eswOnSettingsChange"></a>
 Пример использования:
 ``` ts
 import { Catalog, EswOnSettingsChange, GetSettingsReturn } from "@artsofte/esw";
@@ -156,7 +162,7 @@ window.eswInit = (config: WidgetSettings) => {
 ```
 Важно понимать, что при рендеринге на стороне провайдера config в метод eswInit будет пустым, так как провайдер еще не выбрал настройки. Объект будет наполняться по мере наполнения настроек провайдером.
 
-### Запись в модель документа
+### Запись в модель документа <a name="docWrite"></a>
 Виджет может записывать данные в модель документа. Для этого виджет должен вернуть требуемые настройки в методе `initSettings`
 ``` ts
 import {
@@ -219,7 +225,7 @@ class SimpleWidget implements EswAfterUnmount {
   }
 }
 ```
-### Справочники
+### Справочники <a name="catalogs"></a>
 Виджет может читать данные из справочника, который к нему привяжет провайдер
 ``` ts
 import { Catalog, GetSettingsReturn } from "@artsfote/esw";
@@ -274,7 +280,7 @@ class CatalogReader {
 }
 ```
 
-### Другие настройки 
+### Другие настройки <a name="other"></a>
 - `documentRootRead` чтение всей модели документа. В `saveTo` будет записан `ReadonlyDocumentElement<T>`
 - `select` отображение селекта. В `saveTo` будет записан `SelectItem`
 
