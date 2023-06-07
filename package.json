@@ -1,6 +1,6 @@
 {
   "name": "@artsofte/esw",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Esw types",
   "types": "./dist/index.d.ts",
   "scripts": {
