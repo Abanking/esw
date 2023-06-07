@@ -14,8 +14,8 @@ export type EswClientEnv = {
     isProvider: false;
     /** Айди документа пользователя */
     documentId: string;
-    // /** Авторизованный ли пользователь */
-    // isAuth: boolean;
+    /** Находится ли пользователь в неавторизованной зоне */
+    isAnonymous: boolean;
     /** Платформа на которой происходит рендеринг */
     platform: RenderingPlatform;
 };

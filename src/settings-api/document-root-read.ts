@@ -22,7 +22,7 @@ export const isDocumentRootReadSettingsDeclaration = (settings: Settings): setti
         return false;
     }
 
-    return settings && 'type' in settings && settings.type === 'documentRootRead';
+    return settings && 'type' in settings && settings.type === 'documentRootRead' && typeof settings.saveTo === 'string';
 };
 
 export const isProviderDocumentRootReadSettings = (settings: any): settings is ProviderDocumentRootReadSettings => {
@@ -30,5 +30,5 @@ export const isProviderDocumentRootReadSettings = (settings: any): settings is P
         return false;
     }
 
-    return settings && 'type' in settings && settings.type === 'documentRootRead';
+    return settings && 'type' in settings && settings.type === 'documentRootRead' && typeof settings.value === 'boolean';
 };
