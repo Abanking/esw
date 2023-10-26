@@ -282,7 +282,6 @@ class CatalogReader {
 ```
 
 ### Другие настройки <a name="other"></a>
-- `documentRootRead` чтение всей модели документа. В `saveTo` будет записан `ReadonlyDocumentElement<T>`
 - `select` отображение селекта. В `saveTo` будет записан `SelectItem`
 
 ## Использование бибилотек и фреймворков <a name="frameworks"></a>
