@@ -3,6 +3,7 @@ export * from './document-element-api';
 export * from './types';
 export * from './settings-api';
 export * from './catalog-api';
+export * from './operation-api';
 export * from './lifecycle-hooks';
 export * from './window';
 export * from './constans';
